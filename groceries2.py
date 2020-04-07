@@ -66,11 +66,35 @@ while True:
     # For each of these, add in code to handle adding/editing/removing items
     if menu_choice == 1:
         while True:
-            menu_choice2 = int(input())
-            grocery_range = range(len(groceries))
-            for i in grocery_range:
-                item = groceries[i]
-                print(f'{i}: {item}')
+            menu_choice2 = int(input(sub_menu))
+
+            if menu_choice2 == 1:
+                grocery_range = range(len(groceries))
+                for i in grocery_range:
+                    item = groceries[i]
+                    print(f'{i}: {item}')
+            elif menu_choice2 == 2:
+                while True:
+                    item_to_remove = input('Please input the index number of the item you would like to remove. If you would like to exit enter -1: ')
+                    if item_to_remove == '':
+                        break
+                    else:
+                        item_to_remove = int(item_to_remove)
+                        del groceries[item_to_remove]
+            elif menu_choice2 == 3:
+                first_menu_choice = int(input('Please enter starting index point: '))
+                second_menu_choice = int(input('Please enter endind index point: '))
+                #removals = []
+                # #while True:
+                #     items_to_remove = input('Please input item to remove: ')
+                #     if item_to_remove == '':
+                #         break
+                    
+                del groceries[first_menu_choice:second_menu_choice]# = removals
+            elif menu_choice2 == 4:
+                break
+
+
     elif menu_choice == 2:
             while True:
                 item_add = input('Please add items to your grocery list: ')
