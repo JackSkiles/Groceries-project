@@ -107,46 +107,46 @@ while True:
 
     # Menu selection 2 should allow the user to add items to their list as needed. It should also then print the submenu.
     elif menu_choice == 2:
-            while True:
-                item_add = input('Please add items to your grocery list: ')
-                if item_add == '':
-                    break
-                groceries.append(item_add)
-        
-            second_menu()
+        while True:
+            item_add = input('Please add items to your grocery list: ')
+            if item_add == '':
+                break
+            groceries.append(item_add)
+    
+        second_menu()
 
     # Menu selection 3 should allow users to edit their list based on index points. It should also print the submenu.
     elif menu_choice == 3:
-            first_menu_choice = int(input('Please enter starting index point: '))
-            second_menu_choice = int(input('Please enter endind index point: '))
+        first_menu_choice = int(input('Please enter starting index point: '))
+        second_menu_choice = int(input('Please enter endind index point: '))
 
-            if first_menu_choice == second_menu_choice:
-                new_item = input('Please enter new item to add: ')
+        if first_menu_choice == second_menu_choice:
+            new_item = input('Please enter new item to add: ')
 
-                groceries[second_menu_choice] = new_item
-            else:
-                replacements = []
-                while True:
-                    item_to_replace = input('Please input item to add: ')
-                    if item_to_replace == '':
-                        break
-                    replacements.append(item_to_replace)
-                    groceries[first_menu_choice:second_menu_choice] = replacements
-            
-            second_menu()
+            groceries[second_menu_choice] = new_item
+        else:
+            replacements = []
+            while True:
+                item_to_replace = input('Please input item to add: ')
+                if item_to_replace == '':
+                    break
+                replacements.append(item_to_replace)
+                groceries[first_menu_choice:second_menu_choice] = replacements
+        
+        second_menu()
 
     # Menu selection 4 should allow users to remove whatever item they want. It should also prompt users with the submenu
     elif menu_choice == 4:
-            print(groceries)
-            while True:
-                item_to_remove = input('Please input the index number of the item you would like to remove: ')
-                if item_to_remove == '':
-                    break
-                else:
-                    item_to_remove = int(item_to_remove)
-                    del groceries[item_to_remove]
-            
-            second_menu()
+        print(groceries)
+        while True:
+            item_to_remove = input('Please input the index number of the item you would like to remove: ')
+            if item_to_remove == '':
+                break
+            else:
+                item_to_remove = int(item_to_remove)
+                del groceries[item_to_remove]
+        
+        second_menu()
 
     # Menu selection 5 will exit out of the entire program
     elif menu_choice == 5:
